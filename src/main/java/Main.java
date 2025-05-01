@@ -86,8 +86,8 @@ public class Main {
                         ct = (Double) result;
                     }
                     System.out.println(ct);
-                    Thread.sleep((int) ((tt - ct + 5) * 1000));
-                    sum += tt - ct + 5;
+                    Thread.sleep((int) ((tt - ct + 3) * 1000));
+                    sum += tt - ct + 3;
                 }
                 driver.close();
                 driver.switchTo().window((String) windowHandles[0]);
