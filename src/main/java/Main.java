@@ -55,11 +55,9 @@ public class Main {
                 List<WebElement> fs = driver.findElements(By.cssSelector("#ext-gen1050 > iframe"));
                 List<WebElement> states = driver.findElements(By.id("ext-gen1051"));
                 int num = fs.size();
-                System.out.println(num+"  "+states.size());
                 driver.switchTo().defaultContent();
                 for (int i = 0; i < num; i++,driver.switchTo().defaultContent()) {
                     driver.switchTo().frame("iframe");
-                    System.out.println(states.get(i).getAttribute("aria-label"));
                     if(states.get(i).getAttribute("aria-label").equals("任务点已完成")){
                         continue;
                     }
@@ -69,7 +67,6 @@ public class Main {
                     b.click();
                     Thread.sleep(1000);
                     WebElement v = driver.findElement(By.tagName("video"));
-                    System.out.println(v);
                     Object result = driver.executeScript("return arguments[0].duration;", v);
                     Double tt;
                     if (result instanceof Long) {
@@ -77,7 +74,6 @@ public class Main {
                     } else {
                         tt = (Double) result;
                     }
-                    System.out.println(tt);
                     result = driver.executeScript("return arguments[0].currentTime;", v);
                     Double ct;
                     if (result instanceof Long) {
@@ -85,7 +81,6 @@ public class Main {
                     } else {
                         ct = (Double) result;
                     }
-                    System.out.println(ct);
                     Thread.sleep((int) ((tt - ct + 3) * 1000));
                     sum += tt - ct + 3;
                 }
