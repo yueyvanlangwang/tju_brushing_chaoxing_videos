@@ -10,7 +10,7 @@
 
 2、可以运行maven项目的ide
 
-3.1、X64，edge或浏览器，且版本为135.0.3179.98正式版
+3.1、X64，edge浏览器，且版本为135.0.3179.98正式版
 
 3.2、如果浏览器版本不对就更新edge到这个版本，或者自行下载对应版本的EdgeWebDriver，替换src/main/resources/msedgedriver.exe
 
