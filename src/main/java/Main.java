@@ -56,7 +56,7 @@ public class Main  {
                 driver.switchTo().defaultContent();
                 for (int i = 0; i < num; i++,driver.switchTo().defaultContent()) {
                     //视频总播放超过850分钟后停止程序
-                    if (sum > 850) {
+                    if (sum > 850*60) {
                         driver.quit();
                         return;
                     }
